@@ -22,7 +22,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var pickBtn: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
-    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     
     let memeTxtAttributes:[String:Any] =
         [
@@ -175,10 +177,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
 
     
     @IBAction func cancelMeme(_ sender: Any) {
-        socialBtn.isEnabled = false
-        txtTop.text = "Top"
-        txtBottom.text = "Bottom"
-        ImagePickerView.image = nil
+        dismiss(animated: true, completion: nil)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

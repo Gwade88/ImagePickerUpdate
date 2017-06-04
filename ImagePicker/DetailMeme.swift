@@ -10,6 +10,10 @@ import UIKit
 
 class DetailMeme: UIViewController {
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     @IBOutlet weak var imgView: UIImageView!
     
     var meme: MemeImage! = nil
